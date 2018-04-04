@@ -9,21 +9,21 @@ gulp.task('watch', function(){
 		//makes browsersync notifications dissappear
 		//notify: false,
 		server:{
-			baseDir:"task_list"
+			baseDir:"loan_calculator"
 		}
 	});
 
 	//reload browser on changes
-	watch('./task_list/index.html', function(){
+	watch('./loan_calculator/index.html', function(){
 		browserSync.reload();
 	});
 	
-	watch('./task_list/assets/styles/**/*.css', function(){
+	watch('./loan_calculator/assets/styles/**/*.css', function(){
 		gulp.start('cssInject');
 		//browserSync.reload();
 	});
 
-	watch('./task_list/assets/scripts/**/*.js', function(){
+	watch('./loan_calculator/assets/scripts/**/*.js', function(){
 		//gulp.start('scriptsRefresh');
 		browserSync.reload();
 	});
@@ -31,7 +31,7 @@ gulp.task('watch', function(){
 
 //new task for browsersync inject css - with styles task dependency
 gulp.task('cssInject',['styles'], function(){
-	gulp.src('./task_list/temp/styles/styles.css')
+	gulp.src('./loan_calculator/temp/styles/styles.css')
 	.pipe(browserSync.stream());
 });
 

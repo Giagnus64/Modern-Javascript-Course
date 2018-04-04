@@ -11,13 +11,13 @@ hexrgba = require('postcss-hexrgba');
 
 //task to pipe css through processor packages
 gulp.task('styles', function(){
-	return gulp.src('./task_list/assets/styles/styles.css')
+	return gulp.src('./loan_calculator/assets/styles/styles.css')
 	.pipe(postcss([cssImport, mixins, cssvars, nested, hexrgba, autoprefixer]))
 	//error checking
 	.on('error', function(errorInfo){
 		console.log(errorInfo.toString());
 		this.emit('end');
 	})
-	.pipe(gulp.dest('./task_list/temp/styles'));
+	.pipe(gulp.dest('./loan_calculator/temp/styles'));
 
 });

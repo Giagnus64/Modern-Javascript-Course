@@ -9,21 +9,21 @@ gulp.task('watch', function(){
 		//makes browsersync notifications dissappear
 		//notify: false,
 		server:{
-			baseDir:"loan_calculator"
+			baseDir:"number_guesser"
 		}
 	});
 
 	//reload browser on changes
-	watch('./loan_calculator/index.html', function(){
+	watch('./number_guesser/index.html', function(){
 		browserSync.reload();
 	});
 	
-	watch('./loan_calculator/assets/styles/**/*.css', function(){
+	watch('./number_guesser/assets/styles/**/*.css', function(){
 		gulp.start('cssInject');
 		//browserSync.reload();
 	});
 
-	watch('./loan_calculator/assets/scripts/**/*.js', function(){
+	watch('./number_guesser/assets/scripts/**/*.js', function(){
 		//gulp.start('scriptsRefresh');
 		browserSync.reload();
 	});
@@ -31,7 +31,7 @@ gulp.task('watch', function(){
 
 //new task for browsersync inject css - with styles task dependency
 gulp.task('cssInject',['styles'], function(){
-	gulp.src('./loan_calculator/temp/styles/styles.css')
+	gulp.src('./number_guesser/temp/styles/styles.css')
 	.pipe(browserSync.stream());
 });
 

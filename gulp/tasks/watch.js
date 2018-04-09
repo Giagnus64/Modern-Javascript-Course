@@ -9,21 +9,21 @@ gulp.task('watch', function(){
 		//makes browsersync notifications dissappear
 		//notify: false,
 		server:{
-			baseDir:"number_guesser"
+			baseDir:"book-list"
 		}
 	});
 
 	//reload browser on changes
-	watch('./number_guesser/index.html', function(){
+	watch('./book-list/index.html', function(){
 		browserSync.reload();
 	});
 	
-	watch('./number_guesser/assets/styles/**/*.css', function(){
+	watch('./book-list/assets/styles/**/*.css', function(){
 		gulp.start('cssInject');
 		//browserSync.reload();
 	});
 
-	watch('./number_guesser/assets/scripts/**/*.js', function(){
+	watch('./book-list/assets/scripts/**/*.js', function(){
 		//gulp.start('scriptsRefresh');
 		browserSync.reload();
 	});
@@ -31,7 +31,7 @@ gulp.task('watch', function(){
 
 //new task for browsersync inject css - with styles task dependency
 gulp.task('cssInject',['styles'], function(){
-	gulp.src('./number_guesser/temp/styles/styles.css')
+	gulp.src('./book-list/temp/styles/styles.css')
 	.pipe(browserSync.stream());
 });
 

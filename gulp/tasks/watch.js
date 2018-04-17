@@ -9,12 +9,12 @@ gulp.task('watch', function(){
 		//makes browsersync notifications dissappear
 		//notify: false,
 		server:{
-			baseDir:"book-list"
+			baseDir:"easy-HTTP"
 		}
 	});
 
 	//reload browser on changes
-	watch('./book-list/index.html', function(){
+	watch('./easy-HTTP/index.html', function(){
 		browserSync.reload();
 	});
 	
@@ -23,7 +23,7 @@ gulp.task('watch', function(){
 		//browserSync.reload();
 	});
 
-	watch('./book-list/assets/scripts/**/*.js', function(){
+	watch('./easy-HTTP/assets/scripts/**/*.js', function(){
 		//gulp.start('scriptsRefresh');
 		browserSync.reload();
 	});

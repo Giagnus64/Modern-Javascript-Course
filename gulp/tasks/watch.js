@@ -9,21 +9,21 @@ gulp.task('watch', function(){
 		//makes browsersync notifications dissappear
 		//notify: false,
 		server:{
-			baseDir:"easy-HTTP"
+			baseDir:"github_finder"
 		}
 	});
 
 	//reload browser on changes
-	watch('./easy-HTTP/index.html', function(){
+	watch('./github_finder/index.html', function(){
 		browserSync.reload();
 	});
 	
-	watch('./book-list/assets/styles/**/*.css', function(){
+	watch('./github_finder/assets/styles/**/*.css', function(){
 		gulp.start('cssInject');
 		//browserSync.reload();
 	});
 
-	watch('./easy-HTTP/assets/scripts/**/*.js', function(){
+	watch('./github_finder/assets/scripts/**/*.js', function(){
 		//gulp.start('scriptsRefresh');
 		browserSync.reload();
 	});

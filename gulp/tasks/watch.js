@@ -9,21 +9,21 @@ gulp.task('watch', function(){
 		//makes browsersync notifications dissappear
 		//notify: false,
 		server:{
-			baseDir:"github_finder"
-		}
+			baseDir:"weather_app",
+			}
 	});
 
 	//reload browser on changes
-	watch('./github_finder/index.html', function(){
+	watch('./weather_app/index.html', function(){
 		browserSync.reload();
 	});
 	
-	watch('./github_finder/assets/styles/**/*.css', function(){
+	watch('./weather_app/assets/styles/**/*.css', function(){
 		gulp.start('cssInject');
 		//browserSync.reload();
 	});
 
-	watch('./github_finder/assets/scripts/**/*.js', function(){
+	watch('./weather_app/assets/scripts/**/*.js', function(){
 		//gulp.start('scriptsRefresh');
 		browserSync.reload();
 	});

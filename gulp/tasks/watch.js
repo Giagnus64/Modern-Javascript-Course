@@ -9,8 +9,8 @@ gulp.task('watch', function(){
 		//makes browsersync notifications dissappear
 		//notify: false,
 		server:{
-			baseDir:"weather_app"
-		}
+			baseDir:"weather_app",
+			}
 	});
 
 	//reload browser on changes

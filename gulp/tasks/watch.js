@@ -9,12 +9,12 @@ gulp.task('watch', function(){
 		//makes browsersync notifications dissappear
 		//notify: false,
 		server:{
-			baseDir:"weather_app",
+			baseDir:"form_validation",
 			}
 	});
 
 	//reload browser on changes
-	watch('./weather_app/index.html', function(){
+	watch('./form_validation/index.html', function(){
 		browserSync.reload();
 	});
 	
@@ -23,7 +23,7 @@ gulp.task('watch', function(){
 		//browserSync.reload();
 	});
 
-	watch('./weather_app/assets/scripts/**/*.js', function(){
+	watch('./form_validation/assets/scripts/**/*.js', function(){
 		//gulp.start('scriptsRefresh');
 		browserSync.reload();
 	});

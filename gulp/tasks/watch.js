@@ -9,12 +9,12 @@ gulp.task('watch', function(){
 		//makes browsersync notifications dissappear
 		//notify: false,
 		server:{
-			baseDir:"form_validation",
+			baseDir:"profile_scroller",
 			}
 	});
 
 	//reload browser on changes
-	watch('./form_validation/index.html', function(){
+	watch('./profile_scroller/index.html', function(){
 		browserSync.reload();
 	});
 	
@@ -23,7 +23,7 @@ gulp.task('watch', function(){
 		//browserSync.reload();
 	});
 
-	watch('./form_validation/assets/scripts/**/*.js', function(){
+	watch('./profile_scroller/assets/scripts/**/*.js', function(){
 		//gulp.start('scriptsRefresh');
 		browserSync.reload();
 	});

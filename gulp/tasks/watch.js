@@ -9,12 +9,12 @@ gulp.task('watch', function(){
 		//makes browsersync notifications dissappear
 		//notify: false,
 		server:{
-			baseDir:"state_pattern",
+			baseDir:"tracalorie_project",
 			}
 	});
 
 	//reload browser on changes
-	watch('./state_pattern/index.html', function(){
+	watch('./tracalorie_project/index.html', function(){
 		browserSync.reload();
 	});
 	
@@ -23,7 +23,7 @@ gulp.task('watch', function(){
 		//browserSync.reload();
 	});
 
-	watch('./state_pattern/assets/scripts/**/*.js', function(){
+	watch('./tracalorie_project/assets/scripts/**/*.js', function(){
 		//gulp.start('scriptsRefresh');
 		browserSync.reload();
 	});
